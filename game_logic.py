@@ -9,6 +9,7 @@ def get_random_word():
     return random.choice(WORDS)
 
 def display_game_state(mistakes, secret_word, guessed_letters):
+    """Displays the current state of the game."""
     print("\n" + "="*40)
     # Display the snowman stage for the current number of mistakes.
     print(ascii_art.STAGES[mistakes])
@@ -21,6 +22,7 @@ def display_game_state(mistakes, secret_word, guessed_letters):
 
 
 def play_game():
+    """Main game loop for Snowman Meltdown."""
     secret_word = get_random_word()
     guessed_letters = set()
     mistakes = 0
@@ -58,6 +60,7 @@ def play_game():
             print("❌ Incorrect!")
 
 def main():
+    """Main function to start the game."""
     while True:
         play_game()
         again = input("Would you like to play again? (y/n): ").strip().lower()
